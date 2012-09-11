@@ -3,9 +3,10 @@
 <head>
 
 
-	<link rel="stylesheet" type="text/css" href="/home/webonise/Nayana/CSS/student.css" />
+	<link rel="stylesheet" type="text/css" href="/home/webonise/Nayana/student_form/student.css" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js">
 	</script>
+
 	<script>
 	window.resizeTo(200,200 );
 	$(document).ready(function(){
@@ -14,7 +15,7 @@
 	if(($('#name').val())=="" || ($('#age').val())=="" || ($('#gender').val())=="" || ($('#email').val())=="" || ($('#description').val())=="" ||
 	($('#address').val())=="" || ($('#pincode').val())=="")
 	{
-	alert("Error");
+	alert("Please fill data ");
 	return false;
 	}
 
@@ -27,15 +28,30 @@
 	}
 	
 	var intRegex = /[0-9 -()+]+$/; 
-	if($('#pincode').val().search(intRegex)==-1 || $('#age').val().search(intRegex)==-1 ) 
+	if($('#pincode').val().search(intRegex)==-1)
 	{
-	alert("Please enter data in correct form");
+	alert("Please enter numeric data in pincode");
+	$('#pincode').val("");
 	return false;
 	}
-	
-	if($('#name').val().search(intRegex)==0 || $('#description').val().search(intRegex)==0)
+	if($('#age').val().search(intRegex)==-1)
 	{
-	alert("Please enter data in correct format");
+	alert("Please enter numeric data in age");
+	$('#age').val("");
+	return false
+	}
+	
+	
+	if($('#name').val().search(intRegex)==0)
+	{
+	alert("Please enter correct name");
+	$('#name').val("");
+	return false;
+	}
+	if($('#description').val().search(intRegex)==0)
+	{
+	alert("Please enter correct data in description");
+	$('#description').val("");
 	return false;
 	}
 	
@@ -48,45 +64,59 @@
 <body >
 
 <div class="outer" align="center">
-<img src="/home/webonise/Nayana/IMG/kkw.jpg" height="300" width="700" >
-	
-<div class=inner align="center">
+<h2>K.K.Wagh College of Engineering ,Nashik</h2>
+<img src="/home/webonise/Nayana/IMG/kkw.jpg" height="250" width="700" >	
 <h1>Student Registration Form</h1>
-	<form id="input_form" action="http://blooming-beach-2334.herokuapp.com/users.json" method="post">
- 	<label for="name">Name: </label>
+<div class=inner >
+
+	<form id="submit_form" action="http://blooming-beach-2334.herokuapp.com/users.json" method="post">
+	
+ 	<label for="name">Name:</label>
 	
 	<input type="text" input id="name" name="name" ></br></br>
 	
-	<label for="age">Age:    </label>
+	<label for="age">Age:</label>
 	
 	<input type="number" input id="age" name="age" ></br></br>
 
-	<label for="gender">Gender</label>
+	<label for="gender">Gender:</label>
 
 	<input type="radio" input id="gender1" name="gender" value="male" > Male
 
 	<input type="radio" input id="gender1" name="gender" value="female" > Female</br></br>
 	
-	<label for="email">Email-id</label>
+	<label for="email">Email-id:</label>
 	
 	<input type="text" input id="email" name="email" ></br></br>
 
-	<label for="add">Address</label>
+	<label for="add">Address:</label>
 
-	<input type="text" input id="address" name="address" ></br></br>
+	<textarea name="address"  id="address"  ></textarea></br></br>
 
-	<label for="pin">Pincode</label>
+	<label for="pin">Pincode:</label>
 
 	<input type="text" input id="pincode" name="pincode" ></br></br>
 
-	<label for="description">Description</label>
+	<label for="description">Description:</label>
 
 	<input type="text" input id="description" name="description" ></br></br>
-	
-	<input type="submit" input id="submit" value="Submit">
 
+	<div class="button">
+	
+	<input type="submit" input id="submit" value="Submit" align="center">
+	</div>
+
+	</form>
+
+	<form id="show_form" action="http://blooming-beach-2334.herokuapp.com/users.json" method="get">
+
+	<div class="button">
+	<input type="submit" input id="show" value="Show" >
+	</div">
+	
+	</form>
 </div>	
-</form>
+
 
 </div>
 </body>

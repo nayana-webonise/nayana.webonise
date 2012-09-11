@@ -9,15 +9,30 @@ text-align:center;
 background-color:black;
 width:700px
 }
+.inner
+{
+border:2px solid #a1a1a1;
+padding:10px 40px; 
+background:white;
+width:500px;
+border-radius:25px;
+-moz-border-radius:25px;
+text-align:left;
+}
 .main
 {
 width:700px;
 }
 
+.button
+{
+text-align:center;
+color:purple;
+}
 h2
 {
 color:green;
-text-align:left;
+text-align:center;
 background-color:white;
 }
 label
