@@ -29,12 +29,7 @@ width:700px;
 text-align:center;
 color:purple;
 }
-h2
-{
-color:green;
-text-align:center;
-background-color:white;
-}
+
 label
 {
 display: inline-block; 

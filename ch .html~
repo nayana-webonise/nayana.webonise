@@ -42,6 +42,16 @@
 	}
 	
 	
+	var emailRegex = new RegExp(/^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$/i);
+ 	var valid = emailRegex.test($('#email').val());
+  	if (!valid) {
+    	alert("Invalid e-mail address");
+    	return false;
+  	} else
+	{
+    	return true;
+	}
+
 	if($('#name').val().search(intRegex)==0)
 	{
 	alert("Please enter correct name");

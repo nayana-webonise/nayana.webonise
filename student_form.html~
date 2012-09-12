@@ -15,7 +15,7 @@
 	if(($('#name').val())=="" || ($('#age').val())=="" || ($('#gender').val())=="" || ($('#email').val())=="" || ($('#description').val())=="" ||
 	($('#address').val())=="" || ($('#pincode').val())=="")
 	{
-	alert("Please fill data ");
+	alert("Please fill data");
 	return false;
 	}
 
@@ -23,9 +23,18 @@
 	
 	if(pin>6 || pin<6)
 	{
-	alert("wrong pin");
+	alert("Wrong pin code");
+	$('#pincode').val("");
 	return false;
 	}
+
+	var emailRegex = new RegExp(/^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$/i);
+ 	var valid = emailRegex.test($('#email').val());
+  	if (!valid) {
+    	alert("Invalid e-mail address");
+	$('#email').val("");
+    	return false;
+  	} 
 
 	var intRegex = /[0-9 -()+]+$/; 
 	if($('#pincode').val().search(intRegex)==-1)
@@ -64,7 +73,6 @@
 <body >
 
 <div class="outer" align="center">
-<h2>K.K.Wagh College of Engineering ,Nashik</h2>
 <img src="/home/webonise/Nayana/student_form/images.jpeg" height="250" width="700" >	
 <h1>Student Registration Form</h1>
 <div class=inner >
@@ -112,12 +120,10 @@
 
 	<div class="button">
 	<input type="submit" input id="show" value="Show" >
-	</div">
+	</div>
 	
 	</form>
 </div>	
-
-
 </div>
 </body>
 </html>
