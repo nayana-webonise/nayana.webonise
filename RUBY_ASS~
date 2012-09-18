@@ -50,67 +50,6 @@ Ans:
 1.9.3p194 :018 > arr=string1.split(' ')
  => ["RUBY", "parses", "a", "file", "by", "looking", "for", "<br/>", "one", "of", "the", "special", "tags", "that", "tells", "it", "to", "start", "interpreting", "the", "text", "as", "RUBY", "code.", "The", "parser", "then", "executes", "all", "of", "the", "code", "it", "finds", "until", "it", "runs", "into", "a", "RUBY", "closing", "<br/>", "tag."] 
 
-
-1.9.3p194 :125 > class RECURSION
-1.9.3p194 :126?>    def recur(arr,position)
-1.9.3p194 :127?>     if position!=arr.length
-1.9.3p194 :128?>       puts arr.fetch(position)
-1.9.3p194 :129?>       end
-1.9.3p194 :130?>     if position!=arr.length
-1.9.3p194 :131?>        recur(arr,position+1)
-1.9.3p194 :132?>       end
-1.9.3p194 :133?>     end
-1.9.3p194 :134?>   end
- => nil 
-1.9.3p194 :135 > n=RECURSION.new
- => #<RECURSION:0x0000000112fdf8> 
-1.9.3p194 :136 > n.recur($arr,0)
-RUBY
-parses
-a
-file
-by
-looking
-for
-<br/>
-one
-of
-the
-special
-tags
-that
-tells
-it
-to
-start
-interpreting
-the
-text
-as
-RUBY
-code.
-The
-parser
-then
-executes
-all
-of
-the
-code
-it
-finds
-until
-it
-runs
-into
-a
-RUBY
-closing
-<br/>
-tag.
- => nil 
-
-
 Question 4:
 
 4. Capitalise string 1
