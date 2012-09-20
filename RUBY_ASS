@@ -1,0 +1,332 @@
+Question 1:
+1. Find occurance of RUBY from string 1.
+
+Ans:
+
+1.9.3p194 :187 > no=string1.scan('RUBY')
+ => ["RUBY", "RUBY", "RUBY"] 
+1.9.3p194 :188 > no.length
+ => 3 
+ 	OR
+
+1.9.3p194 :162 > occur="0"
+ => "0" 
+1.9.3p194 :163 > arr.each do |i|
+1.9.3p194 :164 >     if i.eql?("RUBY")
+1.9.3p194 :165?>     occur=occur.succ
+1.9.3p194 :166?>     end
+1.9.3p194 :167?>   end
+ => ["RUBY", "parses", "a", "file", "by", "looking", "for", "<br/>", "one", "of", "the", "special", "tags", "that", "tells", "it", "to", "start", "interpreting", "the", "text", "as", "RUBY", "code.", "The", "parser", "then", "executes", "all", "of", "the", "code", "it", "finds", "until", "it", "runs", "into", "a", "RUBY", "closing", "<br/>", "tag."] 
+1.9.3p194 :168 >occur
+ => "3" 
+
+Question 2:
+2. Find the position where RUBY occures in the string 1.
+
+Ans:
+1.9.3p194 :018 > arr=string1.split(' ')
+ => ["RUBY", "parses", "a", "file", "by", "looking", "for", "<br/>", "one", "of", "the", "special", "tags", "that", "tells", "it", "to", "start", "interpreting", "the", "text", "as", "RUBY", "code.", "The", "parser", "then", "executes", "all", "of", "the", "code", "it", "finds", "until", "it", "runs", "into", "a", "RUBY", "closing", "<br/>", "tag."] 
+
+1.9.3p194 :062 > pos=0
+ => 0 
+1.9.3p194 :063 > arr.each do |i|
+1.9.3p194 :064 >     if i.eql?('RUBY')
+1.9.3p194 :065?>     puts pos
+1.9.3p194 :066?>     pos=pos+i.length
+1.9.3p194 :067?>     pos+=1
+1.9.3p194 :068?>     else
+1.9.3p194 :069 >       pos=pos+i.length
+1.9.3p194 :070?>     pos+=1
+1.9.3p194 :071?>     end
+1.9.3p194 :072?>   end
+0
+112
+194
+
+Question 3:
+3. Create array of words in string 1 & print them using a recursive function.
+
+Ans:
+1.9.3p194 :018 > arr=string1.split(' ')
+ => ["RUBY", "parses", "a", "file", "by", "looking", "for", "<br/>", "one", "of", "the", "special", "tags", "that", "tells", "it", "to", "start", "interpreting", "the", "text", "as", "RUBY", "code.", "The", "parser", "then", "executes", "all", "of", "the", "code", "it", "finds", "until", "it", "runs", "into", "a", "RUBY", "closing", "<br/>", "tag."] 
+
+
+1.9.3p194 :125 > class RECURSION
+1.9.3p194 :126?>    def recur(arr,position)
+1.9.3p194 :127?>     if position!=arr.length
+1.9.3p194 :128?>       puts arr.fetch(position)
+1.9.3p194 :129?>       end
+1.9.3p194 :130?>     if position!=arr.length
+1.9.3p194 :131?>        recur(arr,position+1)
+1.9.3p194 :132?>       end
+1.9.3p194 :133?>     end
+1.9.3p194 :134?>   end
+ => nil 
+1.9.3p194 :135 > n=RECURSION.new
+ => #<RECURSION:0x0000000112fdf8> 
+1.9.3p194 :136 > n.recur($arr,0)
+RUBY
+parses
+a
+file
+by
+looking
+for
+<br/>
+one
+of
+the
+special
+tags
+that
+tells
+it
+to
+start
+interpreting
+the
+text
+as
+RUBY
+code.
+The
+parser
+then
+executes
+all
+of
+the
+code
+it
+finds
+until
+it
+runs
+into
+a
+RUBY
+closing
+<br/>
+tag.
+ => nil 
+
+
+Question 4:
+
+4. Capitalise string 1
+
+Ans:
+1.9.3p194 :262 > capital=string1.split(' ')
+ => ["RUBY", "parses", "a", "file", "by", "looking", "for", "<br/>", "one", "of", "the", "special", "tags", "that", "tells", "it", "to", "start", "interpreting", "the", "text", "as", "RUBY", "code.", "The", "parser", "then", "executes", "all", "of", "the", "code", "it", "finds", "until", "it", "runs", "into", "a", "RUBY", "closing", "<br/>", "tag."] 
+1.9.3p194 :263 > capital
+ => ["RUBY", "parses", "a", "file", "by", "looking", "for", "<br/>", "one", "of", "the", "special", "tags", "that", "tells", "it", "to", "start", "interpreting", "the", "text", "as", "RUBY", "code.", "The", "parser", "then", "executes", "all", "of", "the", "code", "it", "finds", "until", "it", "runs", "into", "a", "RUBY", "closing", "<br/>", "tag."] 
+1.9.3p194 :264 > capital.each do |i|
+1.9.3p194 :265 >     puts i.capitalize
+1.9.3p194 :266?>   end
+Ruby
+Parses
+A
+File
+By
+Looking
+For
+<br/>
+One
+Of
+The
+Special
+Tags
+That
+Tells
+It
+To
+Start
+Interpreting
+The
+Text
+As
+Ruby
+Code.
+The
+Parser
+Then
+Executes
+All
+Of
+The
+Code
+It
+Finds
+Until
+It
+Runs
+Into
+A
+Ruby
+Closing
+<br/>
+Tag.
+ => ["RUBY", "parses", "a", "file", "by", "looking", "for", "<br/>", "one", "of", "the", "special", "tags", "that", "tells", "it", "to", "start", "interpreting", "the", "text", "as", "RUBY", "code.", "The", "parser", "then", "executes", "all", "of", "the", "code", "it", "finds", "until", "it", "runs", "into", "a", "RUBY", "closing", "<br/>", "tag."] 
+
+Question 5. Combine string 1 & 2 
+
+Ans:
+
+string1.concat(string2)
+ => "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag.RUBY does not require (or support) explicit type definition in variable declaration; a variable's type is determined by the context in which the variable is used. " 
+
+Question 6. Print string 1 & 2 using here doc
+
+Ans:
+1.9.3p194 :216 > puts <<first_string
+rst_string of the code it finds until it runs into a RUBY closing <br/> tag. "fi 
+1.9.3p194 :218"> first_string
+ "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag. "first_string
+ => nil 
+
+Question 7. Print current date
+
+Ans:
+1.9.3p194 :041 > Time
+ => 2012-09-13 15:59:47 +0530 
+1.9.3p194 :046 > cu_date=Time.to_s
+ => "2012-09-13 15:59:47 +0530" 
+1.9.3p194 :047 >cu_date
+ => "2012-09-13 15:59:47 +0530" 
+1.9.3p194 :058 > cu_date.split(" ").first
+ => "2012-09-13" 
+
+
+Question 8
+8. print 12th Jan 2012
+
+Ans:
+1.9.3p194 :003 > time=Time.now
+ => 2012-09-13 20:02:32 +0530 
+
+1.9.3p194 :004 > time
+ => 2012-09-13 20:02:32 +0530 
+1.9.3p194 :006 > time.strftime("%d %b %Y")
+ => "13 Sep 2012" 
+
+
+Question 9
+9. add 7 days in current date
+
+Ans:
+1.9.3p194 :003 > Time.now+(1*7*24*60*60)
+ => 2012-09-21 09:12:17 +0530 
+
+
+Question 10
+10. Cut the string 1 into 4 parts & print it.
+
+Ans:
+1.9.3p194 :017 > string1.split(' ',4)
+ => ["RUBY", "parses", "a", "file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."] 
+
+Question 11:
+11. Divide the string 1 by occurances of '.'. Combine the array in reverse word sequence
+
+Ans:
+1.9.3p194 :251 > on_dot=string1.split('.')
+ => ["RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code", " The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag", " "] 
+1.9.3p194 :252 > on_dot
+ => ["RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code", " The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag", " "] 
+1.9.3p194 :255 > on_dot.each do |i|
+1.9.3p194 :256 >     puts i.reverse
+1.9.3p194 :257?>   end
+edoc YBUR sa txet eht gniterpretni trats ot ti sllet taht sgat laiceps eht fo eno >/rb< rof gnikool yb elif a sesrap YBUR
+gat >/rb< gnisolc YBUR a otni snur ti litnu sdnif ti edoc eht fo lla setucexe neht resrap ehT 
+ 
+ => ["RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code", " The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag", " "] 
+
+Question 12
+12. Remove the HTML characters from string.
+
+Ans:
+1.9.3p194 :013 > string1.gsub(/<[^<>]*>/, "")
+ => " RUBY parses a file by looking for  one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing  tag." 
+
+
+Question 13
+13. Print the 'RUBY' word from string 1 by traversing it using string functions
+
+Ans:
+1.9.3p194 :204 > string1.scan('RUBY')
+ => ["RUBY", "RUBY", "RUBY"] 
+
+
+Question 14
+14. Find the length of string 1 & 2
+
+Ans:
+1.9.3p194 :036 > string1.length
+ => 380 
+1.9.3p194 :037 > string2.length
+ => 163 
+
+
+Ques 15:
+15. Create file & write string 1 to that file using RUBY functions.
+
+Ans:
+1.9.3p194 :001 > put=File.new("naina",'w')
+ => #<File:naina> 
+1.9.3p194 :002 > put.puts(" RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag.")
+ => nil 
+1.9.3p194 :003 > put.close()
+ => nil 
+
+
+Question 16
+16. Print all Global varibles provided by RUBY
+
+Ans:
+1.9.3p194 :120 > global_variables
+ => [:$;, :$-F, :$@, :$!, :$SAFE, :$~, :$&, :$`, :$', :$+, :$=, :$KCODE, :$-K, :$,, :$/, :$-0, :$\, :$_, :$stdin, :$stdout, :$stderr, :$>, :$<, :$., :$FILENAME, :$-i, :$*, :$?, :$$, :$:, :$-I, :$LOAD_PATH, :$", :$LOADED_FEATURES, :$VERBOSE, :$-v, :$-w, :$-W, :$DEBUG, :$-d, :$0, :$PROGRAM_NAME, :$-p, :$-l, :$-a, :$binding, :$1, :$2, :$3, :$4, :$5, :$6, :$7, :$8, :$9] 
+
+
+
+Question 19:
+19. Compare two dates. (12-4-2010 & 12-5-2011). Calculate the days between these two dates.
+
+Ans:
+1.9.3p194 :014 > date1=Date.new(2011,5,12)
+ => #<Date: 2011-05-12 ((2455694j,0s,0n),+0s,2299161j)> 
+1.9.3p194 :015 > date2=Date.new(2010,4,12)
+ => #<Date: 2010-04-12 ((2455299j,0s,0n),+0s,2299161j)> 
+1.9.3p194 :016 > date_diff = date1 - date2
+ => (395/1) 
+1.9.3p194 :017 > date_diff.to_i
+ => 395 
+
+
+
+
+Question 20
+20. Print date after 20 days from current date
+
+Ans:
+1.9.3p194 :009 > Time.now + (20*24*60*60)
+ => 2012-10-04 09:17:10 +0530 
+
+
+Question 21:
+21. Print date in array format.
+
+Ans:
+Ans:
+1.9.3p194 :013 > cur_date=Time.now
+ => 2012-09-13 19:47:52 +0530 
+1.9.3p194 :016 > str_date=cur_date.to_s
+ => "2012-09-13 19:47:52 +0530" 
+1.9.3p194 :017 > arr_date=str_date.split(' ')
+ => ["2012-09-13", "19:47:52", "+0530"] 
+1.9.3p194 :018 > arr_date
+ => ["2012-09-13", "19:47:52", "+0530"] 
+1.9.3p194 :021 > today=arr_date.first
+ => "2012-09-13" 
+1.9.3p194 :023 > array_date=today.split('-')
+ => ["2012", "09", "13"] 
+

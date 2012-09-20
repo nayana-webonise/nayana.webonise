@@ -1,0 +1,1 @@
+create table recipe(tag varchar(20),link varchar(20),name varchar(20));
